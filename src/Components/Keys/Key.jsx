@@ -1,3 +1,5 @@
+import "./style.css";
+
 const Key = ({ name, note }) => {
   return (
     <div className="key">
@@ -26,7 +28,7 @@ const Key = ({ name, note }) => {
       </svg>
 
       <h3>{name}</h3>
-      <p>{note}</p>
+      <p className="">{note}</p>
     </div>
   );
 };

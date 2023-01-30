@@ -1,6 +1,7 @@
 import "./style.css";
-import { keyData } from "../../Utils/Data";
+import { keyData, futureData } from "../../Utils/Data";
 import Key from "../Keys/Key";
+import Future from "../Future/Future";
 
 
 const Main = () => {
@@ -100,7 +101,7 @@ const Main = () => {
               </p>
             </div>
             <div className="ans2">
-              <h3>The possibilities are beyond your imagination</h3>
+              <h3 className="">The possibilities are beyond your Imagination</h3>
               <div className="sub">
                 <a href="#" className="">
                   Explore The Library
@@ -113,6 +114,24 @@ const Main = () => {
                 ))}
             </div>
           </div>
+        </div>
+
+        <div className="futures">
+            <div className="futures-inner">
+                <div className="future1">
+                    <h3>
+                    The Future is Now and You Just Need To Realize It. Step into Future Today & Make it Happen.
+                    </h3>
+                    <a href="#" className="">
+                    Request Early Access to Get Started
+                    </a>
+                </div>
+                <div className="future-2">
+                {futureData.map((future)=>(
+                    <Future name={future.name} note={future.note} />
+                ))}
+                </div>
+            </div>
         </div>
       </div>
     </main>

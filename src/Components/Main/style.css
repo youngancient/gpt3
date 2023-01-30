@@ -34,7 +34,9 @@ h1,
 .partners img {
   margin-left: 1rem;
 }
-.hero-txt {
+.hero-txt,
+.what,
+.futures {
   padding: 1.5rem;
 }
 .hero form {
@@ -77,6 +79,71 @@ input {
   background: transparent;
   border: 3px solid #ff4820;
 }
+.what,
+.futures {
+  margin-top: 3rem;
+}
+.what-inner {
+  padding: 1rem;
+  background: #042c54;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.what .ans1,
+.ans2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.ans2,
+.ans3 {
+  margin-top: 3rem;
+}
+.sub {
+  margin-top: 1rem;
+}
+.ans2 h3 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  background: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%),
+    #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ans2 a {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  color: #ff8a71;
+}
+.ans1 p {
+  margin-top: 0.5rem;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  color: #81afdd;
+}
+.ans1 h4 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: -0.04em;
+  line-height: 3rem;
+}
+.ans3 div:first-child {
+  margin-top: 0;
+}
 @media screen and (min-width: 728px) {
   h1,
   .hero-txt {
@@ -107,6 +174,10 @@ input {
     grid-template-columns: 65% 35%;
     grid-gap: 1rem;
     grid-template-areas: "txt img";
+  }
+  .hero,
+  .what,
+  .futures {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
@@ -184,6 +255,62 @@ input {
   .partners img {
     margin-left: 1.5rem;
   }
+  .what-inner {
+    padding: 1.5rem;
+  }
+  .what .ans1 {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    text-align: left;
+    align-items: unset;
+  }
+  .ans1 p {
+    margin-top: 1.5rem;
+  }
+  .head {
+    display: block;
+  }
+  .what .ans2 {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+  .sub {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+  .ans1 h4 {
+    line-height: 2.5rem;
+  }
+  .ans2 h3 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .sub {
+    margin-top: 0;
+  }
+  .ans2 a {
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .ans3 {
+    display: grid;
+    margin-top: 4rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+  }
+  .ans3 div {
+    margin-top: 0;
+  }
+  .futures-inner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
 }
 @media screen and (min-width: 820px) {
   h1 {
@@ -194,7 +321,9 @@ input {
   }
 }
 @media screen and (min-width: 998px) {
-  .hero {
+  .hero,
+  .what,
+  .futures {
     padding-left: 4rem;
     padding-right: 4rem;
   }
@@ -241,13 +370,38 @@ input {
   .desktop-error {
     display: block;
   }
-  .users{
-    margin-top: 2rem;
+  .users {
+    margin-top: 3rem;
   }
   .users-img {
     width: 20%;
   }
   .partners img {
     margin-left: 2rem;
+  }
+  .what {
+    margin-top: 5rem;
+  }
+  .what-inner {
+    padding: 3rem;
+  }
+  .what .ans1 {
+    display: grid;
+    grid-template-columns: 40% 60%;
+  }
+  .ans1 p {
+    margin-top: 3rem;
+  }
+  .ans1 h4 {
+    line-height: 75px;
+  }
+  .ans2,
+  .ans3 {
+    margin-top: 5rem;
+  }
+  .ans2 h3 {
+    font-size: 34px;
+    line-height: 45px;
+    padding-right: 8rem;
   }
 }

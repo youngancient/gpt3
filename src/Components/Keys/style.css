@@ -1,0 +1,33 @@
+
+.key h3 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 50px;
+    letter-spacing: -0.04em;
+  }
+  .key p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    color: #81afdd;
+  }
+.key{
+    margin-top: 1.5rem;
+}
+@media screen and (min-width: 728px) {
+  .key h3 {
+    font-size: 24px;
+    line-height: 75px;
+  }
+  .key p {
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+@media screen and (min-width: 998px) {
+    .key p{
+        padding-right: 5rem;
+    }
+}
