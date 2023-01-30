@@ -1,8 +1,21 @@
-
-
 @media screen and (min-width: 728px) {
-    
+  .f-head h3 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.04em;
   }
-  @media screen and (min-width: 998px) {
-    
-  }
+}
+.future p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #81afdd;
+}
+@media screen and (min-width: 998px) {
+    .future p{
+        padding-right: 4rem;
+    }
+}

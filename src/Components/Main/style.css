@@ -109,7 +109,7 @@ input {
 .sub {
   margin-top: 1rem;
 }
-.ans2 h3 {
+.ans2 h3, .future1 h3{
   font-style: normal;
   font-weight: 800;
   font-size: 1.4rem;
@@ -120,7 +120,7 @@ input {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.ans2 a {
+.ans2 a , .future1 a{
   font-weight: 500;
   font-size: 16px;
   line-height: 30px;
@@ -144,6 +144,18 @@ input {
 .ans3 div:first-child {
   margin-top: 0;
 }
+.future2 .future{
+    margin-top: 1.5rem;
+}
+.f-a{
+    margin-top: 1.5rem;
+}
+.future2{
+    margin-top: 2rem;
+}
+.future2 .future:first-of-type{
+    margin-top: 0;
+  }
 @media screen and (min-width: 728px) {
   h1,
   .hero-txt {
@@ -284,7 +296,7 @@ input {
   .ans1 h4 {
     line-height: 2.5rem;
   }
-  .ans2 h3 {
+  .ans2 h3, .future1 h3 {
     font-style: normal;
     font-weight: 800;
     font-size: 1.5rem;
@@ -293,7 +305,7 @@ input {
   .sub {
     margin-top: 0;
   }
-  .ans2 a {
+  .ans2 a, .future1 a {
     font-size: 16px;
     line-height: 30px;
   }
@@ -309,7 +321,25 @@ input {
   .futures-inner{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
+    grid-gap: 2rem;
+  }
+  .future1{
+    margin-top: 0.5rem;
+  }
+  .future1 .f-a{
+    margin-top: 2rem;
+  }
+  .future2{
+    margin-top: 0;
+  }
+  .future1 h3{
+    padding-right: 1rem;
+  }
+  .future2 .future{
+    margin-top: 1rem;
+  }
+  .future2 .future:first-of-type{
+    margin-top: 0;
   }
 }
 @media screen and (min-width: 820px) {
@@ -379,8 +409,8 @@ input {
   .partners img {
     margin-left: 2rem;
   }
-  .what {
-    margin-top: 5rem;
+  .what, .futures{
+    margin-top: 8rem;
   }
   .what-inner {
     padding: 3rem;
@@ -399,9 +429,12 @@ input {
   .ans3 {
     margin-top: 5rem;
   }
-  .ans2 h3 {
+  .ans2 h3, .future1 h3 {
     font-size: 34px;
     line-height: 45px;
     padding-right: 8rem;
+  }
+  .future1 h3{
+    padding-right: 10rem;
   }
 }

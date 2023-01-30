@@ -122,11 +122,13 @@ const Main = () => {
                     <h3>
                     The Future is Now and You Just Need To Realize It. Step into Future Today & Make it Happen.
                     </h3>
-                    <a href="#" className="">
-                    Request Early Access to Get Started
-                    </a>
+                    <div className="f-a">
+                        <a href="#" className="">
+                        Request Early Access to Get Started
+                        </a>
+                    </div>
                 </div>
-                <div className="future-2">
+                <div className="future2">
                 {futureData.map((future)=>(
                     <Future name={future.name} note={future.note} />
                 ))}
