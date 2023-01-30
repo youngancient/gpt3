@@ -1,6 +1,11 @@
 
 .bdr{
-    border: 1px solid #000;
+    border: 1px solid #fff;
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 .header{
     display: flex;
@@ -26,11 +31,12 @@ button{
     grid-template-columns: 30% 70%;
     /* backdrop-filter: blur(1px); */
     background: hsla(0, 0%, 12%, 0.8);
-    z-index: 2;
 }
 .slidein{
+    z-index: 10;
     padding: 2rem;
     background: #fff;
+    z-index: 10;
 }
 .x{
     display: flex;
@@ -50,6 +56,33 @@ button{
 .a-gc .a{
     margin-top: 2rem;
 }
+.mobile-btn{
+    display: flex;
+    flex-direction: column;
+}
+.mobile-btn button{
+    height: 50px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.btn1{
+    background: transparent;
+    color: #072D56;
+    border: 2px solid #072D56;;
+}
+.btn2{
+    margin-top: 1rem;
+    background: #FF4820;
+}
+.btn1:hover{
+    background: #072D56;
+    color: #fff;
+}
+.btn2:hover{
+    background: transparent;
+    border: 2px solid #FF4820;
+    color: #072D56;
+}
 @media screen and (min-width: 728px) {
     .desktop{
       display: block;
@@ -63,7 +96,7 @@ button{
         width: 90%;
     }
     .desktop-links a{
-        margin-left: 1rem;
+        margin-left: 0.5rem;
         font-size: 18px;
         font-weight: 500;
     }
@@ -94,7 +127,8 @@ button{
         line-height: 25px;
     }
     .signup:hover{
-        background: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+        background: transparent;
+        border: 2px solid #FF4820;
     }
   }
   /* @media screen and (min-width: 728px) {} */

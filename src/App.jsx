@@ -8,7 +8,7 @@ function App() {
   const [isClicked, setClick] = useState(false);
 
   return (
-    <div className={`App ${isClicked ? 'shorten' : ''} `}>
+    <div className="App">
       <Header isClicked={isClicked} setClick={setClick} />
       <Main />
       <Footer />

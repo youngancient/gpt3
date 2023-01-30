@@ -14,7 +14,7 @@ const popupVariants = {
   exit: {
     opacity: 0,
     transition: {
-      duration: 0.5,
+      duration: 1.5,
     },
   },
 };
@@ -61,7 +61,7 @@ const Header = ({ isClicked, setClick }) => {
           <img src="/assets/GPT-3.svg" alt="logo" className="" />
         </div>
         <div className="desktop-links desktop">
-          <div className="links bdr">
+          <div className="links">
             <a href="#" className="">
               Home
             </a>
@@ -78,7 +78,7 @@ const Header = ({ isClicked, setClick }) => {
               Library
             </a>
           </div>
-          <div className="btn bdr">
+          <div className="btn">
             <a href="#" className="" style={{ marginLeft: "0" }}>
               Sign in
             </a>
@@ -139,6 +139,10 @@ const Header = ({ isClicked, setClick }) => {
                 <a href="#" className="">
                   Library
                 </a>
+              </div>
+              <div className="a mobile-btn bdr">
+                <button className="btn1">Sign in</button>
+                <button className="btn2">Sign up</button>
               </div>
             </div>
           </motion.div>
