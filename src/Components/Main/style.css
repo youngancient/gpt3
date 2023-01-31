@@ -16,6 +16,7 @@ main {
 }
 .error {
   margin-top: 0.5rem;
+  font-size: 13px;
 }
 h1,
 .hero-txt {
@@ -36,7 +37,9 @@ h1,
 }
 .hero-txt,
 .what,
-.futures {
+.futures,
+.register,
+.blogs {
   padding: 1.5rem;
 }
 .hero form {
@@ -80,10 +83,14 @@ input {
   border: 3px solid #ff4820;
 }
 .what,
-.futures {
+.futures,
+.possible,
+.register,
+.blogs {
   margin-top: 3rem;
 }
-.what-inner {
+.what-inner,
+.register-inner {
   padding: 1rem;
   background: #042c54;
   padding-top: 2rem;
@@ -109,7 +116,7 @@ input {
 .sub {
   margin-top: 1rem;
 }
-.ans2 h3, .future1 h3{
+.h3 {
   font-style: normal;
   font-weight: 800;
   font-size: 1.4rem;
@@ -120,12 +127,34 @@ input {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.ans2 a , .future1 a{
+.ans2 a,
+.future1 a,
+.possible a {
   font-weight: 500;
   font-size: 16px;
   line-height: 30px;
   color: #ff8a71;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
 }
+@keyframes hover {
+  from {
+    border-bottom: 0;
+  }
+  to {
+    border-bottom: 100%;
+  }
+}
+
+.ans2 a:hover,
+.future1 a:hover,
+.possible a:hover {
+  border-bottom-style: solid;
+  width: fit-content;
+  border-bottom-color: #ff8a71;
+  animation: hover 0.3s;
+}
+
 .ans1 p {
   margin-top: 0.5rem;
   font-style: normal;
@@ -144,18 +173,70 @@ input {
 .ans3 div:first-child {
   margin-top: 0;
 }
-.future2 .future{
-    margin-top: 1.5rem;
+.future2 .future {
+  margin-top: 1.5rem;
 }
-.f-a{
-    margin-top: 1.5rem;
+.f-a {
+  margin-top: 1.5rem;
 }
-.future2{
-    margin-top: 2rem;
+.future2 {
+  margin-top: 2rem;
 }
-.future2 .future:first-of-type{
-    margin-top: 0;
-  }
+.future2 .future:first-of-type {
+  margin-top: 0;
+}
+.img-possible img {
+  width: 100%;
+}
+.img-possible {
+  padding-right: 2rem;
+}
+.possible-txt {
+  padding: 1.5rem;
+}
+.possible-txt p {
+  margin-top: 0.5rem;
+}
+.register-inner {
+  background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10.7236px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.rg2 button {
+  background: #000000;
+  border-radius: 40px;
+  width: 150px;
+  height: 50px;
+  font-weight: 700;
+}
+.rg2 button:hover {
+  background: transparent;
+  border: 2px solid #000000;
+  color: #000000;
+}
+.rg1 h4 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 25px;
+  color: #000000;
+}
+.rg1 a {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 30px;
+  color: #0e0e0e;
+}
+.rg2 {
+  margin-top: 1rem;
+}
 @media screen and (min-width: 728px) {
   h1,
   .hero-txt {
@@ -189,7 +270,10 @@ input {
   }
   .hero,
   .what,
-  .futures {
+  .futures,
+  .possible,
+  .register,
+  .blogs {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
@@ -267,7 +351,8 @@ input {
   .partners img {
     margin-left: 1.5rem;
   }
-  .what-inner {
+  .what-inner,
+  .register-inner {
     padding: 1.5rem;
   }
   .what .ans1 {
@@ -296,7 +381,7 @@ input {
   .ans1 h4 {
     line-height: 2.5rem;
   }
-  .ans2 h3, .future1 h3 {
+  .h3 {
     font-style: normal;
     font-weight: 800;
     font-size: 1.5rem;
@@ -305,7 +390,8 @@ input {
   .sub {
     margin-top: 0;
   }
-  .ans2 a, .future1 a {
+  .ans2 a,
+  .future1 a {
     font-size: 16px;
     line-height: 30px;
   }
@@ -318,29 +404,67 @@ input {
   .ans3 div {
     margin-top: 0;
   }
-  .futures-inner{
+  .futures-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
   }
-  .future1{
+  .future1 {
     margin-top: 0.5rem;
   }
-  .future1 .f-a{
+  .future1 .f-a {
     margin-top: 2rem;
   }
-  .future2{
+  .future2 {
     margin-top: 0;
   }
-  .future1 h3{
+  .future1 h3 {
     padding-right: 1rem;
   }
-  .future2 .future{
+  .future2 .future {
     margin-top: 1rem;
   }
-  .future2 .future:first-of-type{
+  .future2 .future:first-of-type {
     margin-top: 0;
   }
+  .possible {
+    margin-top: 3rem;
+  }
+  .possible-inner {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+  .possible-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+  }
+  .possible-txt .h3 {
+    margin-top: 1rem;
+  }
+  .possible-txt p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #81afdd;
+    margin-top: 1rem;
+  }
+  .img-possible {
+    padding-right: 0;
+  }
+
+  .rg1 h4 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .rg1 a {
+    font-size: 12px;
+    line-height: 30px;
+  }
+  
 }
 @media screen and (min-width: 820px) {
   h1 {
@@ -353,7 +477,10 @@ input {
 @media screen and (min-width: 998px) {
   .hero,
   .what,
-  .futures {
+  .futures,
+  .possible,
+  .register,
+  .blogs {
     padding-left: 4rem;
     padding-right: 4rem;
   }
@@ -409,10 +536,16 @@ input {
   .partners img {
     margin-left: 2rem;
   }
-  .what, .futures{
+  .what,
+  .futures,
+  .possible,
+  .register,
+  .blogs {
     margin-top: 8rem;
   }
-  .what-inner {
+  .what-inner,
+  .possible-inner,
+  .register-inner{
     padding: 3rem;
   }
   .what .ans1 {
@@ -429,12 +562,37 @@ input {
   .ans3 {
     margin-top: 5rem;
   }
-  .ans2 h3, .future1 h3 {
+  .h3 {
     font-size: 34px;
     line-height: 45px;
     padding-right: 8rem;
   }
-  .future1 h3{
+  .future1 h3 {
     padding-right: 10rem;
+  }
+  .possible-txt .h3 {
+    padding-right: 3rem;
+    margin-top: 1.5rem;
+  }
+  .possible-txt p {
+    margin-top: 1.5rem;
+  }
+  .possible-txt .f-a:nth-of-type(2) {
+    margin-top: 2rem;
+  }
+  .register-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+  .rg2 {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: 0;
+  }
+  .rg1 h4 {
+    font-size: 24px;
+    line-height: 45px;
   }
 }

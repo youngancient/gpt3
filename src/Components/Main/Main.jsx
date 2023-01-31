@@ -3,7 +3,6 @@ import { keyData, futureData } from "../../Utils/Data";
 import Key from "../Keys/Key";
 import Future from "../Future/Future";
 
-
 const Main = () => {
   return (
     <main>
@@ -101,39 +100,100 @@ const Main = () => {
               </p>
             </div>
             <div className="ans2">
-              <h3 className="">The possibilities are beyond your Imagination</h3>
+              <h3 className="h3">
+                The possibilities are beyond your Imagination
+              </h3>
               <div className="sub">
-                <a href="#" className="">
+                <a href="#" className="cool-link">
                   Explore The Library
                 </a>
               </div>
             </div>
             <div className="ans3">
-                {keyData.map((keys)=>(
-                    <Key name={keys.name} note={keys.note} />
-                ))}
+              {keyData.map((keys) => (
+                <Key name={keys.name} note={keys.note} />
+              ))}
             </div>
           </div>
         </div>
 
         <div className="futures">
-            <div className="futures-inner">
-                <div className="future1">
-                    <h3>
-                    The Future is Now and You Just Need To Realize It. Step into Future Today & Make it Happen.
-                    </h3>
-                    <div className="f-a">
-                        <a href="#" className="">
-                        Request Early Access to Get Started
-                        </a>
-                    </div>
-                </div>
-                <div className="future2">
-                {futureData.map((future)=>(
-                    <Future name={future.name} note={future.note} />
-                ))}
-                </div>
+          <div className="futures-inner">
+            <div className="future1">
+              <h3 className="h3">
+                The Future is Now and You Just Need To Realize It. Step into
+                Future Today & Make it Happen.
+              </h3>
+              <div className="f-a">
+                <a href="#" className="cool-link">
+                  Request Early Access to Get Started
+                </a>
+              </div>
             </div>
+            <div className="future2">
+              {futureData.map((future) => (
+                <Future name={future.name} note={future.note} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="possible">
+          <div className="possible-inner">
+            <div className="img-possible">
+              <img src="/assets/ladyUser.webp" alt="vr user" className="" />
+            </div>
+            <div className="possible-txt">
+              <div className="f-a desktop">
+                <a
+                  href="#"
+                  className=""
+                  style={{ color: "#71E5FF", borderBottom: 0 }}
+                >
+                  Request Early Access to Get Started
+                </a>
+              </div>
+              <h3 className="h3">
+                The possibilities are beyond your imagination
+              </h3>
+              <p>
+                Yet bed any for travelling assistance indulgence unpleasing. Not
+                thoughts all exercise blessing. Indulgence way everything joy
+                alteration boisterous the attachment. Party we years to order
+                allow asked of.
+              </p>
+              <div className="f-a">
+                <a href="#" className="">
+                  Request Early Access to Get Started
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="register">
+          <div className="register-inner bdr">
+            <div className="rg1">
+              <a href="#" className="">
+                Request Early Access to Get Started
+              </a>
+              <h4>
+                Register today & start exploring the endless possiblities.
+              </h4>
+            </div>
+            <div className="rg2">
+              <button>Get Started</button>
+            </div>
+          </div>
+        </div>
+
+        <div className="blogs">
+          <div className="blogs-inner">
+            <h1>A lot is happening, <br/>We are blogging about it.</h1>
+            <div className="blogs-cont">
+
+            </div>
+          </div>
         </div>
       </div>
     </main>

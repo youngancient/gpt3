@@ -1,11 +1,9 @@
-@media screen and (min-width: 728px) {
-  .f-head h3 {
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 30px;
-    letter-spacing: -0.04em;
-  }
+.f-head h3 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.04em;
 }
 .future p {
   font-style: normal;
@@ -13,6 +11,9 @@
   font-size: 15px;
   line-height: 24px;
   color: #81afdd;
+  margin-top: 0.5rem;
+}
+@media screen and (min-width: 728px) {
 }
 @media screen and (min-width: 998px) {
     .future p{
