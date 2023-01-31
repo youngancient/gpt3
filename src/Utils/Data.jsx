@@ -31,3 +31,36 @@ export const futureData = [
     note: "Really boy law county she unable her sister. Feet you off its like like six. Among sex are leave law built now. In built table in an rapid blush.",
   },
 ];
+
+export const blogData = [
+  {
+    image : "",
+    date : "Aug 26, 2021",
+    name : "GPT-3 and Open  AI is the future. Let us exlore how it is?",
+  },
+  {
+    image : "",
+    date : "Sep 29, 2022",
+    name : "",
+  },
+  {
+    image : "",
+    date : "Nov 29, 2022",
+    name : "GPT-3 and Open  AI is the future. Let us exlore how it is?",
+  },
+  {
+    image : "",
+    date : "Jan 11, 2023",
+    name : "GPT-3 and Open  AI is the future. Let us exlore how it is?",
+  },
+  {
+    image : "",
+    date : "Jan 20, 2022",
+    name : "GPT-3 and Open  AI is the future. Let us exlore how it is?",
+  },
+  {
+    image : "",
+    date : "Jan 30, 2022",
+    name : "GPT-3 and Open  AI is the future. Let us exlore how it is?",
+  },
+]
