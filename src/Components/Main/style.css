@@ -27,10 +27,12 @@ h1,
 }
 .partners {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
   padding: 0.5rem;
   margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 .partners img {
   margin-left: 1rem;
@@ -39,7 +41,8 @@ h1,
 .what,
 .futures,
 .register,
-.blogs {
+.blogs,
+.footer {
   padding: 1.5rem;
 }
 .hero form {
@@ -69,7 +72,7 @@ input {
 .hero-btn {
   margin-top: 0.5rem;
 }
-.hero button {
+.hero button{
   width: 100%;
   height: 50px;
   background: #ff4820;
@@ -86,7 +89,8 @@ input {
 .futures,
 .possible,
 .register,
-.blogs {
+.blogs,
+footer {
   margin-top: 3rem;
 }
 .what-inner,
@@ -237,7 +241,7 @@ input {
 .rg2 {
   margin-top: 1rem;
 }
-.blogs-cont{
+.blogs-cont {
   padding-top: 1rem;
 }
 @media screen and (min-width: 728px) {
@@ -276,7 +280,8 @@ input {
   .futures,
   .possible,
   .register,
-  .blogs {
+  .blogs,
+  .footer {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
@@ -351,7 +356,7 @@ input {
     justify-content: center;
     align-items: center;
   }
-  .partners img {
+  .partners .img {
     margin-left: 1.5rem;
   }
   .what-inner,
@@ -467,15 +472,15 @@ input {
     font-size: 12px;
     line-height: 30px;
   }
-  .blogs-cont{
+  .blogs-cont {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1rem;
     margin-top: 4rem;
     padding-top: 0;
   }
-  .blogs-cont .blog:first-of-type{
-    grid-row:1/3 ;
+  .blogs-cont .blog:first-of-type {
+    grid-row: 1/3;
   }
 }
 @media screen and (min-width: 820px) {
@@ -492,7 +497,8 @@ input {
   .futures,
   .possible,
   .register,
-  .blogs {
+  .blogs,
+  .footer {
     padding-left: 4rem;
     padding-right: 4rem;
   }
@@ -552,12 +558,13 @@ input {
   .futures,
   .possible,
   .register,
-  .blogs {
+  .blogs,
+  footer {
     margin-top: 8rem;
   }
   .what-inner,
   .possible-inner,
-  .register-inner{
+  .register-inner {
     padding: 3rem;
   }
   .what .ans1 {
@@ -607,10 +614,10 @@ input {
     font-size: 24px;
     line-height: 45px;
   }
-  .blogs h1{
+  .blogs h1 {
     line-height: 80px;
   }
-  .blogs-cont{
+  .blogs-cont {
     margin-top: 5rem;
     grid-gap: 3rem;
   }

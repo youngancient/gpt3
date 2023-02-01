@@ -52,7 +52,7 @@ const Header = ({ isClicked, setClick }) => {
   const mobileMenuHandler = () => setClick(!isClicked);
   return (
     <header>
-      <motion.div className="header bdr"
+      <motion.div className="header"
       variants={headerVariants}
       initial = "initial"
       animate="final"

@@ -51,16 +51,21 @@ const Main = () => {
           </div>
         </div>
         <div className="partners">
-          <img
-            src="/assets/atlassian.svg"
-            alt="atlasian"
-            className=""
-            style={{ marginLeft: "0" }}
-          />
-          <img src="/assets/dropbox.svg" alt="dropbox" className="" />
-          <img src="/assets/google.svg" alt="google" className="" />
-          <img src="/assets/shopify.svg" alt="shopify" className="" />
-          <img src="/assets/slack.svg" alt="slack" className="" />
+          <div className="img">
+            <img src="/assets/atlassian.svg" alt="atlasian" className="" />
+          </div>
+          <div className="img">
+            <img src="/assets/dropbox.svg" alt="dropbox" className="" />
+          </div>
+          <div className="img">
+            <img src="/assets/google.svg" alt="google" className="" />
+          </div>
+          <div className="img">
+            <img src="/assets/shopify.svg" alt="shopify" className="" />
+          </div>
+          <div className="img">
+            <img src="/assets/slack.svg" alt="slack" className="" />
+          </div>
         </div>
         <div className="what">
           <div className="what-inner">
@@ -190,11 +195,19 @@ const Main = () => {
 
         <div className="blogs">
           <div className="blogs-inner">
-            <h1>A lot is happening, <br/>We are blogging about it.</h1>
+            <h1>
+              A lot is happening, <br />
+              We are blogging about it.
+            </h1>
             <div className="blogs-cont">
-                {blogData.map((blog) =>(
-                  <Blog name={blog.name} alt={blog.alt} date={blog.date} image={blog.image} />
-                ))}
+              {blogData.map((blog) => (
+                <Blog
+                  name={blog.name}
+                  alt={blog.alt}
+                  date={blog.date}
+                  image={blog.image}
+                />
+              ))}
             </div>
           </div>
         </div>
