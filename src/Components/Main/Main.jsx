@@ -1,7 +1,8 @@
 import "./style.css";
-import { keyData, futureData } from "../../Utils/Data";
+import { keyData, futureData, blogData } from "../../Utils/Data";
 import Key from "../Keys/Key";
 import Future from "../Future/Future";
+import Blog from "../Blog/Blog";
 
 const Main = () => {
   return (
@@ -191,7 +192,9 @@ const Main = () => {
           <div className="blogs-inner">
             <h1>A lot is happening, <br/>We are blogging about it.</h1>
             <div className="blogs-cont">
-
+                {blogData.map((blog) =>(
+                  <Blog name={blog.name} alt={blog.alt} date={blog.date} image={blog.image} />
+                ))}
             </div>
           </div>
         </div>

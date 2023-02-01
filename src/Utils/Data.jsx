@@ -34,33 +34,33 @@ export const futureData = [
 
 export const blogData = [
   {
-    image : "",
+    image : "/assets/card1.webp",
+    alt : "blog-tunnel-image",
     date : "Aug 26, 2021",
     name : "GPT-3 and Open  AI is the future. Let us exlore how it is?",
   },
   {
-    image : "",
+    image : "/assets/card2.webp",
+    alt : "blog-image",
     date : "Sep 29, 2022",
-    name : "",
+    name : "GPT-3 and Open  AI is the future. Let us exlore how it is?",
   },
   {
-    image : "",
+    image : "/assets/card3.webp",
+    alt : "blog-image",
     date : "Nov 29, 2022",
     name : "GPT-3 and Open  AI is the future. Let us exlore how it is?",
   },
   {
-    image : "",
+    image : "/assets/card4.webp",
+    alt : "blog-image",
     date : "Jan 11, 2023",
     name : "GPT-3 and Open  AI is the future. Let us exlore how it is?",
   },
   {
-    image : "",
+    image : "/assets/card5.webp",
+    alt : "blog-image",
     date : "Jan 20, 2022",
-    name : "GPT-3 and Open  AI is the future. Let us exlore how it is?",
-  },
-  {
-    image : "",
-    date : "Jan 30, 2022",
     name : "GPT-3 and Open  AI is the future. Let us exlore how it is?",
   },
 ]
