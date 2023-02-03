@@ -96,9 +96,12 @@ footer {
 .what-inner,
 .register-inner {
   padding: 1rem;
-  background: #042c54;
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.what strong{
+  margin-left: 0.5rem;
 }
 .what .ans1,
 .ans2 {
@@ -240,6 +243,8 @@ footer {
 }
 .rg2 {
   margin-top: 1rem;
+  overflow: hidden;
+  width: 100%;
 }
 .blogs-cont {
   padding-top: 1rem;
@@ -288,7 +293,7 @@ footer {
   h1 {
     font-style: normal;
     font-size: 2rem;
-    line-height: 2.5rem;
+    /* line-height: 2.5rem; */
     font-weight: 800;
   }
   .hero form {
@@ -316,6 +321,9 @@ footer {
   .hero-form {
     display: flex;
     flex-direction: column;
+  }
+  .what strong{
+    margin-left: 1rem;
   }
   .users {
     flex-direction: row;

@@ -13,6 +13,9 @@
   color: #81afdd;
   margin-top: 0.5rem;
 }
+.future{
+  overflow: hidden;
+}
 @media screen and (min-width: 728px) {
 }
 @media screen and (min-width: 998px) {

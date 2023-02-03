@@ -1,8 +1,28 @@
 import "./style.css";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const blogVariants = {
+  initial :{
+    scale : 0
+  },
+  final :{
+    scale : 1,
+    transition : {
+      duration: 2
+    }
+  }
+}
 
 const Blog = ({ image, date, name, alt }) => {
+  const { ref: blogRef, inView: blogInView } = useInView();
   return (
-    <div className="blog">
+    <motion.div className="blog"
+    variants={blogVariants}
+    ref={blogRef}
+    initial = "initial"
+    animate = { blogInView ? "final" : ""}
+    >
       <div className="blog-img">
         <img src={image} alt={alt} className="" />
       </div>
@@ -19,7 +39,7 @@ const Blog = ({ image, date, name, alt }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

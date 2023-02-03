@@ -1,18 +1,144 @@
 import "./style.css";
 import { keyData, futureData, blogData } from "../../Utils/Data";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 import Key from "../Keys/Key";
 import Future from "../Future/Future";
 import Blog from "../Blog/Blog";
 
+const heroVariants = {
+  text_init: {
+    opacity: 0,
+    x: "100px",
+  },
+  img_init: {
+    x: "-100px",
+    opacity: 0,
+  },
+  final: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      duration: 1,
+    },
+  },
+};
+
+const whatVariants = {
+  text_init: {
+    opacity: 0,
+    x: "100px",
+  },
+  img_init: {
+    x: "-100px",
+    opacity: 0,
+  },
+  final: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      duration: 1,
+    },
+  },
+  bg_init: {
+    background: "rgba(0, 0, 0, 0)",
+  },
+  showbg: {
+    background: "#042c54",
+    transition: {
+      delay: 1,
+      duration: 2,
+    },
+  },
+  svg_init: {
+    width: 0,
+  },
+  svg_final: {
+    width: 38,
+    transition: {
+      duration: 2,
+    },
+  },
+};
+
+const futureVariants = {
+  one_init: {
+    opacity: 0,
+    x: "-100vw",
+  },
+  two_init: {
+    x: "100vw",
+    opacity: 0,
+  },
+  final: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 1,
+      duration: 2,
+    },
+  },
+};
+
+const btnVariants = {
+  initial: {
+    x: "-100vw",
+  },
+  final: {
+    x: 0,
+    transition: {
+      delay: 1,
+      duration: 3,
+      type: "spring",
+      stiffness: 300,
+    },
+  },
+};
+const blogContVariants ={
+  initial:{
+    opacity : 0,
+  },
+  final :{
+    opacity : 1,
+    transition :{
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+      duration: 1
+    }
+  }
+}
+
 const Main = () => {
+  const [text] = useTypewriter({
+    words: ["Thoughts", "Imagination"],
+    loop: {},
+  });
+  const { ref: myRef, inView: possibleInView } = useInView();
+  const { ref: myBgRef, inView: bgInView } = useInView();
+  const { ref: futureRef, inView: futureInView } = useInView();
+  const { ref: regRef, inView: regInView } = useInView();
+
   return (
     <main>
       <div className="main">
-        <div className="hero">
-          <div className="hero-img">
+        <motion.div className="hero">
+          <motion.div
+            className="hero-img"
+            variants={heroVariants}
+            initial="img_init"
+            animate="final"
+          >
             <img src="/assets/AI.svg" alt="ai image" className="" />
-          </div>
-          <div className="hero-txt">
+          </motion.div>
+          <motion.div
+            className="hero-txt"
+            variants={heroVariants}
+            initial="text_init"
+            animate="final"
+          >
             <h1>Let’s Build Something amazing with GPT-3 OpenAI</h1>
             <p className="txt-p">
               Yet bed any for travelling assistance indulgence unpleasing. Not
@@ -48,8 +174,8 @@ const Main = () => {
                 1,600 people requested access a visit in last 24 hours
               </p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         <div className="partners">
           <div className="img">
             <img src="/assets/atlassian.svg" alt="atlasian" className="" />
@@ -68,11 +194,20 @@ const Main = () => {
           </div>
         </div>
         <div className="what">
-          <div className="what-inner">
+          <motion.div
+            className="what-inner"
+            ref={myBgRef}
+            variants={whatVariants}
+            initial="bg_init"
+            animate={bgInView ? "showbg" : ""}
+          >
             <div className="ans1">
               <div className="head">
-                <svg
-                  width="38"
+                <motion.svg
+                  variants={whatVariants}
+                  initial="svg_init"
+                  animate={bgInView ? "svg_final" : ""}
+                  width="0"
                   height="3"
                   viewBox="0 0 38 3"
                   fill="none"
@@ -89,11 +224,11 @@ const Main = () => {
                       y2="15.9299"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#AE67FA" />
-                      <stop offset="0.973958" stop-color="#F49867" />
+                      <stop stopColor="#AE67FA" />
+                      <stop offset="0.973958" stopColor="#F49867" />
                     </linearGradient>
                   </defs>
-                </svg>
+                </motion.svg>
 
                 <h4>What is GPT-3</h4>
               </div>
@@ -107,7 +242,11 @@ const Main = () => {
             </div>
             <div className="ans2">
               <h3 className="h3">
-                The possibilities are beyond your Imagination
+                The possibilities are beyond your
+                <strong>
+                  {text}
+                  <Cursor cursorColor="#ff4820" />
+                </strong>
               </h3>
               <div className="sub">
                 <a href="#" className="cool-link">
@@ -117,15 +256,20 @@ const Main = () => {
             </div>
             <div className="ans3">
               {keyData.map((keys) => (
-                <Key name={keys.name} note={keys.note} />
+                <Key name={keys.name} note={keys.note} key={keys.key} />
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
         <div className="futures">
-          <div className="futures-inner">
-            <div className="future1">
+          <div className="futures-inner" ref={futureRef}>
+            <motion.div
+              className="future"
+              variants={futureVariants}
+              initial="one_init"
+              animate={futureInView ? "final" : ""}
+            >
               <h3 className="h3">
                 The Future is Now and You Just Need To Realize It. Step into
                 Future Today & Make it Happen.
@@ -135,21 +279,40 @@ const Main = () => {
                   Request Early Access to Get Started
                 </a>
               </div>
-            </div>
-            <div className="future2">
+            </motion.div>
+            <motion.div
+              className="future2"
+              variants={futureVariants}
+              initial="two_init"
+              animate={futureInView ? "final" : ""}
+            >
               {futureData.map((future) => (
-                <Future name={future.name} note={future.note} />
+                <Future
+                  name={future.name}
+                  note={future.note}
+                  key={future.key}
+                />
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
 
         <div className="possible">
-          <div className="possible-inner">
-            <div className="img-possible">
+          <div className="possible-inner" ref={myRef}>
+            <motion.div
+              className="img-possible"
+              variants={whatVariants}
+              initial="text_init"
+              animate={possibleInView ? "final" : ""}
+            >
               <img src="/assets/ladyUser.webp" alt="vr user" className="" />
-            </div>
-            <div className="possible-txt">
+            </motion.div>
+            <motion.div
+              className="possible-txt"
+              variants={whatVariants}
+              initial="img_init"
+              animate={possibleInView ? "final" : ""}
+            >
               <div className="f-a desktop">
                 <a
                   href="#"
@@ -173,12 +336,12 @@ const Main = () => {
                   Request Early Access to Get Started
                 </a>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
-        <div className="register">
-          <div className="register-inner bdr">
+        <div className="register" ref={regRef}>
+          <div className="register-inner">
             <div className="rg1">
               <a href="#" className="">
                 Request Early Access to Get Started
@@ -188,7 +351,13 @@ const Main = () => {
               </h4>
             </div>
             <div className="rg2">
-              <button>Get Started</button>
+              <motion.button
+                variants={btnVariants}
+                initial="initial"
+                animate={regInView ? "final" : ""}
+              >
+                Get Started
+              </motion.button>
             </div>
           </div>
         </div>
@@ -199,16 +368,21 @@ const Main = () => {
               A lot is happening, <br />
               We are blogging about it.
             </h1>
-            <div className="blogs-cont">
+            <motion.div className="blogs-cont"
+            variants={blogContVariants}
+            initial = "initial"
+            animate = "final"
+            >
               {blogData.map((blog) => (
                 <Blog
                   name={blog.name}
                   alt={blog.alt}
                   date={blog.date}
                   image={blog.image}
+                  key={blog.key}
                 />
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

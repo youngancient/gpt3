@@ -16,6 +16,9 @@
 .key{
     margin-top: 1.5rem;
 }
+.key-h{
+  overflow: hidden;
+}
 @media screen and (min-width: 728px) {
   .key h3 {
     font-size: 24px;
