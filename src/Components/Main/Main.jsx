@@ -136,8 +136,8 @@ const Main = () => {
   // state controlling email input
   const [email, setEmail] = useState("");
   const onFormSubmit = (data) => {
-    // use data for stuff
-    console.log(data);
+    // use data for API stuff
+    console.log(data.email);
     setEmail("");
   };
   const handleError = (errors) => {};
@@ -202,7 +202,12 @@ const Main = () => {
                   <button>Get Started</button>
                 </div>
               </div>
-              <p className="error desktop-error">Error here</p>
+              {errors.email && errors.email.type === "required" && (
+                  <p className="error desktop-error">Email is required</p>
+                )}
+                {errors.email && errors.email.type === "validate" && (
+                  <p className="error desktop-error">Invalid Email</p>
+                )}
             </form>
             <div className="users">
               <div className="users-img">

@@ -80,7 +80,7 @@ const Header = ({ isClicked, setClick, inView }) => {
             </a>
           </div>
           <div className="btn">
-            <a href="#" className="bdr" style={{ marginLeft: "0" }}>
+            <a href="#" className="" style={{ marginLeft: "0" }}>
               Sign in
             </a>
             <button className="signup">Sign up</button>
