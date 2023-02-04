@@ -1,6 +1,7 @@
 import "./style.css";
 import { motion, AnimatePresence } from "framer-motion";
 
+
 const popupVariants = {
   closed: {
     opacity: 0,
@@ -48,10 +49,10 @@ const headerVariants = {
     }
 }
 
-const Header = ({ isClicked, setClick }) => {
+const Header = ({ isClicked, setClick, inView }) => {
   const mobileMenuHandler = () => setClick(!isClicked);
   return (
-    <header>
+    <header className={inView ? "blur" : ""}>
       <motion.div className="header"
       variants={headerVariants}
       initial = "initial"
