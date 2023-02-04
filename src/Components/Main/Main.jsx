@@ -118,6 +118,7 @@ const Main = () => {
     words: ["Thoughts", "Imagination"],
     loop: {},
   });
+  const { ref: mainRef, inView: mainInView } = useInView();
   const { ref: myRef, inView: possibleInView } = useInView();
   const { ref: myBgRef, inView: bgInView } = useInView();
   const { ref: futureRef, inView: futureInView } = useInView();
@@ -154,14 +155,14 @@ const Main = () => {
     }
   };
   return (
-    <main>
+    <main ref={mainRef}>
       <div className="main">
         <motion.div className="hero">
           <motion.div
             className="hero-img"
             variants={heroVariants}
             initial="img_init"
-            animate="final"
+            animate={mainInView ? "final" : ''}
           >
             <img src="/assets/AI.svg" alt="ai image" className="" />
           </motion.div>
@@ -169,7 +170,7 @@ const Main = () => {
             className="hero-txt"
             variants={heroVariants}
             initial="text_init"
-            animate="final"
+            animate={mainInView ? "final" : ''}
           >
             <h1>Let’s Build Something amazing with GPT-3 OpenAI</h1>
             <p className="txt-p">

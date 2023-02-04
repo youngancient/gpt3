@@ -8,6 +8,14 @@ a{
 .App{
   background: #040C18;
 }
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #052d56;
+}
 
 @media screen and (min-width: 728px) {
   .desktop{
