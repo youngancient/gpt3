@@ -17,6 +17,8 @@ main {
 .error {
   margin-top: 0.5rem;
   font-size: 13px;
+  color: red;
+  font-weight: 800;
 }
 h1,
 .hero-txt {

@@ -1,11 +1,13 @@
 import "./style.css";
 import { keyData, futureData, blogData } from "../../Utils/Data";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { useForm, Controller } from "react-hook-form";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import Key from "../Keys/Key";
 import Future from "../Future/Future";
 import Blog from "../Blog/Blog";
+import { useState } from "react";
 
 const heroVariants = {
   text_init: {
@@ -97,19 +99,19 @@ const btnVariants = {
     },
   },
 };
-const blogContVariants ={
-  initial:{
-    opacity : 0,
+const blogContVariants = {
+  initial: {
+    opacity: 0,
   },
-  final :{
-    opacity : 1,
-    transition :{
+  final: {
+    opacity: 1,
+    transition: {
       staggerChildren: 0.2,
       delayChildren: 0.3,
-      duration: 1
-    }
-  }
-}
+      duration: 1,
+    },
+  },
+};
 
 const Main = () => {
   const [text] = useTypewriter({
@@ -120,7 +122,37 @@ const Main = () => {
   const { ref: myBgRef, inView: bgInView } = useInView();
   const { ref: futureRef, inView: futureInView } = useInView();
   const { ref: regRef, inView: regInView } = useInView();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    mode: "all",
+    defaultValues: {
+      email: "",
+    },
+  });
 
+  // state controlling email input
+  const [email, setEmail] = useState("");
+  const onFormSubmit = (data) => {
+    // use data for stuff
+    console.log(data);
+    setEmail("");
+  };
+  const handleError = (errors) => {};
+  const handleChange =(event)=>{
+    setEmail(event.target.value.trim())
+  }
+  const handleMail = (email) => {
+    setEmail(email.trim());
+    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (mailformat.test(email)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   return (
     <main>
       <div className="main">
@@ -146,15 +178,26 @@ const Main = () => {
               alteration boisterous the attachment. Party we years to order
               allow asked of.
             </p>
-            <form>
+            <form onSubmit={handleSubmit(onFormSubmit, handleError)} noValidate>
               <div className="hero-form">
                 <input
                   type="email"
                   name=""
                   id=""
+                  value={email}
+                  onChange={handleChange}
                   placeholder="your email address"
+                  {...register("email", {
+                    required: true,
+                    validate: handleMail,
+                  })}
                 />
-                <p className="error mobile-error">Error here</p>
+                {errors.email && errors.email.type === "required" && (
+                  <p className="error mobile-error">Email is required</p>
+                )}
+                {errors.email && errors.email.type === "validate" && (
+                  <p className="error mobile-error">Invalid Email</p>
+                )}
                 <div className="hero-btn">
                   <button>Get Started</button>
                 </div>
@@ -368,10 +411,11 @@ const Main = () => {
               A lot is happening, <br />
               We are blogging about it.
             </h1>
-            <motion.div className="blogs-cont"
-            variants={blogContVariants}
-            initial = "initial"
-            animate = "final"
+            <motion.div
+              className="blogs-cont"
+              variants={blogContVariants}
+              initial="initial"
+              animate="final"
             >
               {blogData.map((blog) => (
                 <Blog
