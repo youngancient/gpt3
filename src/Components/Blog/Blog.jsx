@@ -9,7 +9,7 @@ const blogVariants = {
   final :{
     scale : 1,
     transition : {
-      duration: 2
+      duration: 1.5
     }
   }
 }
