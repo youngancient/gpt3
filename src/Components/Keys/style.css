@@ -13,13 +13,16 @@
     line-height: 25px;
     color: #81afdd;
   }
-.key{
+.key-h{
     margin-top: 1.5rem;
 }
 .key-h{
   overflow: hidden;
 }
 @media screen and (min-width: 728px) {
+  .key-h{
+    margin-top: 0;
+  }
   .key h3 {
     font-size: 24px;
     line-height: 75px;
