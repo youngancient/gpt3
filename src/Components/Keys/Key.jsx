@@ -10,9 +10,9 @@ const keyVariants = {
     x : 0,
     transition:{
       delay : 1 ,
-      duration: 2,
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
+      duration: 1,
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
     }
   },
   svg_init: {
@@ -21,8 +21,8 @@ const keyVariants = {
   svg_final: {
     width: 38,
     transition: {
-      delay: 3,
-      duration: 2,
+      delay: 1.5,
+      duration: 3,
     },
   },
 }

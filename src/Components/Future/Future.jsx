@@ -9,7 +9,7 @@ const fVariants ={
   final:{
     y: 0,
     transition:{
-      duration: 2,
+      duration: 1.5,
       staggerChildren: 0.2,
       delayChildren: 0.3,
     }
