@@ -1,13 +1,14 @@
 import "./style.css";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const blogVariants = {
   initial :{
-    scale : 0
+    scale : 0,
+    opacity : 0,
   },
   final :{
     scale : 1,
+    opacity : 1,
     transition : {
       duration: 1
     }
@@ -15,16 +16,16 @@ const blogVariants = {
 }
 
 const Blog = ({ image, date, name, alt }) => {
-  const { ref: blogRef, inView: blogInView } = useInView();
+
   return (
     <motion.div className="blog"
     variants={blogVariants}
-    ref={blogRef}
     initial = "initial"
-    animate = { blogInView ? "final" : ""}
+    whileInView= "final"
+    viewport={{ once: true }}
     >
       <div className="blog-img">
-        <img src={image} alt={alt} className="" />
+        <img src={image} alt={alt} className="" loading="lazy" />
       </div>
       <div className="txt-below">
         <p className="small">{date}</p>

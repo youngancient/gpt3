@@ -1,10 +1,9 @@
 import "./style.css";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const keyVariants = {
   initial: {
-    x : "-50vw"
+    x : "-100px"
   },
   final :{
     x : 0,
@@ -21,25 +20,26 @@ const keyVariants = {
   svg_final: {
     width: 38,
     transition: {
-      delay: 1.5,
-      duration: 3,
+      delay: 0.5,
+      duration: 2,
     },
   },
 }
 
 const Key = ({ name, note}) => {
-  const { ref: myRef, inView: keyView } = useInView();
   return (
-    <div className="key-h" ref={myRef}>
+    <div className="key-h">
       <motion.div className="key"
       variants={keyVariants}
       initial = "initial"
-      animate = {keyView ? "final" : ""}
+      whileInView= "final"
+      viewport={{ once: true }}
       >
         <motion.svg
           variants={keyVariants}
           initial = "svg_init"
-          animate = {keyView ? "svg_final" : ""}
+          whileInView=  "svg_final"
+          viewport={{ once: true }}
           width="0"
           height="3"
           viewBox="0 0 38 3"

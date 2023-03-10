@@ -1,14 +1,16 @@
 import "./style.css";
-import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
 const fVariants ={
   initial :{
-    y: "-50vh"
+    y: "-105px",
+    opacity : 0,
   },
   final:{
     y: 0,
+    opacity : 1,
     transition:{
+      delay : 0.5,
       duration: 1.5,
       staggerChildren: 0.2,
       delayChildren: 0.3,
@@ -17,13 +19,13 @@ const fVariants ={
 }
 
 const Future = ({name, note}) => {
-  const { ref: futureRef, inView: futureView } = useInView();
   return (
-    <div className="future" ref={futureRef}>
+    <div className="future">
       <motion.div className="f-inner"
       variants={fVariants}
       initial = "initial"
-      animate={futureView ? "final" : ""}
+      whileInView= "final"
+      viewport={{ once: true }}
       >
         <div className="f-head">
           <svg

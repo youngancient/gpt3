@@ -69,10 +69,9 @@ const whatVariants = {
 const futureVariants = {
   one_init: {
     opacity: 0,
-    x: "-100vw",
+    x: "-25vw",
   },
   two_init: {
-    x: "100vw",
     opacity: 0,
   },
   final: {
@@ -87,13 +86,15 @@ const futureVariants = {
 
 const btnVariants = {
   initial: {
-    x: "-100vw",
+    x: "-42vw",
+    opacity : 0,
   },
   final: {
     x: 0,
+    opacity : 1,
     transition: {
-      delay: 1,
-      duration: 3,
+      delay: 0.5,
+      duration: 2,
       type: "spring",
       stiffness: 300,
     },
@@ -118,11 +119,7 @@ const Main = () => {
     words: ["Thoughts", "Imagination"],
     loop: {},
   });
-  const { ref: mainRef, inView: mainInView } = useInView();
-  const { ref: myRef, inView: possibleInView } = useInView();
-  const { ref: myBgRef, inView: bgInView } = useInView();
-  const { ref: futureRef, inView: futureInView } = useInView();
-  const { ref: regRef, inView: regInView } = useInView();
+  
   const {
     register,
     handleSubmit,
@@ -143,7 +140,7 @@ const Main = () => {
   };
   const handleError = (errors) => {};
   const handleChange =(event)=>{
-    setEmail(event.target.value.trim())
+    setEmail(event.target.value.trim());
   }
   const handleMail = (email) => {
     setEmail(email.trim());
@@ -154,15 +151,17 @@ const Main = () => {
       return false;
     }
   };
+
   return (
-    <main ref={mainRef}>
+    <main>
       <div className="main">
         <motion.div className="hero">
           <motion.div
             className="hero-img"
             variants={heroVariants}
             initial="img_init"
-            animate={mainInView ? "final" : ''}
+            whileInView= "final"
+            viewport={{ once: true }}
           >
             <img src="/assets/AI.svg" alt="ai image" className="" />
           </motion.div>
@@ -170,7 +169,8 @@ const Main = () => {
             className="hero-txt"
             variants={heroVariants}
             initial="text_init"
-            animate={mainInView ? "final" : ''}
+            whileInView= "final"
+            viewport={{ once: true }}
           >
             <h1>Let’s Build Something amazing with GPT-3 OpenAI</h1>
             <p className="txt-p">
@@ -245,17 +245,18 @@ const Main = () => {
         <div className="what">
           <motion.div
             className="what-inner"
-            ref={myBgRef}
             variants={whatVariants}
             initial="bg_init"
-            animate={bgInView ? "showbg" : ""}
+            whileInView= "showbg"
+            viewport={{ once: true }}
           >
             <div className="ans1">
               <div className="head">
                 <motion.svg
                   variants={whatVariants}
                   initial="svg_init"
-                  animate={bgInView ? "svg_final" : ""}
+                  whileInView= "svg_final" 
+                  viewport={{ once: true }}
                   width="0"
                   height="3"
                   viewBox="0 0 38 3"
@@ -312,12 +313,13 @@ const Main = () => {
         </div>
 
         <div className="futures">
-          <div className="futures-inner" ref={futureRef}>
+          <div className="futures-inner">
             <motion.div
               className="future"
               variants={futureVariants}
               initial="one_init"
-              animate={futureInView ? "final" : ""}
+              whileInView= "final"
+              viewport={{ once: true }}
             >
               <h3 className="h3">
                 The Future is Now and You Just Need To Realize It. Step into
@@ -333,7 +335,8 @@ const Main = () => {
               className="future2"
               variants={futureVariants}
               initial="two_init"
-              animate={futureInView ? "final" : ""}
+              whileInView= "final"
+              viewport={{ once: true }}
             >
               {futureData.map((future) => (
                 <Future
@@ -347,12 +350,13 @@ const Main = () => {
         </div>
 
         <div className="possible">
-          <div className="possible-inner" ref={myRef}>
+          <div className="possible-inner">
             <motion.div
               className="img-possible"
               variants={whatVariants}
               initial="text_init"
-              animate={possibleInView ? "final" : ""}
+              whileInView= "final"
+              viewport={{ once: true }}
             >
               <img src="/assets/ladyUser.webp" alt="vr user" className="" />
             </motion.div>
@@ -360,7 +364,8 @@ const Main = () => {
               className="possible-txt"
               variants={whatVariants}
               initial="img_init"
-              animate={possibleInView ? "final" : ""}
+              whileInView= "final"
+              viewport={{ once: true }}
             >
               <div className="f-a desktop">
                 <a
@@ -389,7 +394,7 @@ const Main = () => {
           </div>
         </div>
 
-        <div className="register" ref={regRef}>
+        <div className="register">
           <div className="register-inner">
             <div className="rg1">
               <a href="#" className="">
@@ -403,7 +408,8 @@ const Main = () => {
               <motion.button
                 variants={btnVariants}
                 initial="initial"
-                animate={regInView ? "final" : ""}
+                whileInView= "final"
+                viewport={{ once: true }}
               >
                 Get Started
               </motion.button>
