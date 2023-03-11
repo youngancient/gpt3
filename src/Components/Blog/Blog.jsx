@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const blogVariants = {
   initial :{
-    scale : 0,
+    scale : 0.8,
     opacity : 0,
   },
   final :{
